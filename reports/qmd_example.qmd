@@ -36,11 +36,9 @@ as well as Quarto [@Allaire_Quarto_2022].
 
 # Results
 
-![](../results/horse_pops_plot.png)
+![Horse populations for all provinces in Canada from 1906 - 1972.](../results/horse_pops_plot.png){#fig-eda}
 
-Figure 1: Horse populations for all provinces in Canada from 1906 - 1972.
-
-We can see from Figure 1 that Ontario, Saskatchewan and Alberta 
+We can see from @fig-eda that Ontario, Saskatchewan and Alberta 
 have had the highest horse populations in Canada. 
 All provinces have had a decline in horse populations since 1940. 
 This is likely due to the rebound of the Canadian automotive industry 
@@ -51,11 +49,12 @@ to further support this hypothesis.
 
 Suppose we were interested in looking in more closely at the province 
 with the highest spread (in terms of standard deviation) of horse populations. 
-We present the standard deviations in Table 1.
-
-Table 1. Standard deviation of historical (1906-1972) horse populations for each Canadian province.
+We present the standard deviations in @tbl-horses.
 
 ```{python}
+#| echo: false
+#| label: tbl-horses
+#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.
 horses_sd_table = pd.read_csv("../results/horses_sd.csv")
 largest_sd = horses_sd_table['Province'].values[0]
 Markdown(horses_sd_table.to_markdown(index = False))
@@ -65,12 +64,10 @@ Note that we define standard deviation (of a sample) as
 
 $$s = \sqrt{\frac{\sum_{i=1}^N (x_i - \overline{x})^2}{N-1} }$$
 
-Additionally, note that in Table 1 we consider the sample standard deviation of the number of horses during the same time span as Figure 1.
+Additionally, note that in @tbl-horses we consider the sample standard deviation of the number of horses during the same time span as @fig-eda.
 
-![](../results/horse_pops_plot_largest_sd.png)
+![Horse populations for the province with the largest standard deviation](../results/horse_pops_plot_largest_sd.png){#fig-history}
 
-Figure 2: Horse populations for the province with the largest standard deviation
-
-In Figure 2 we zoom in and look at the province of ???, which had the largest spread of values in terms of standard deviation.
+In @fig-history we zoom in and look at the province of ???, which had the largest spread of values in terms of standard deviation.
 
 # References
